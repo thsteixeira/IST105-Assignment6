@@ -15,9 +15,15 @@ def index(request):
 
             messages = [
                 # Check if all inputs are numeric
-                f"All inputs are numeric: {all(isinstance(x, int) for x in [a, b, c, d, e])}",
+                if not all(isinstance(x, int) for x in [a, b, c, d, e]):
+                    messages.append("Not all inputs are numeric!")
+                else:
+                    messages.append("All inputs are numeric!")
                 # Warn if any values are negative
-                f"Warning: Negative values present: {any(x < 0 for x in [a, b, c, d, e])}",
+                if any(x < 0 for x in [a, b, c, d, e]):
+                    messages.append("Warning: Negative values present!")
+                else:
+                    messages.append("No negative values present!")
                 # Calculate average and check if it's > 50
                 f"Average is: {(a + b + c + d + e) / 5:.2f} (Greater than 50: {((a + b + c + d + e) / 5) > 50})",
                 # Count positive values, check even/odd using bitwise
