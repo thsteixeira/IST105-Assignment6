@@ -75,6 +75,7 @@ WSGI_APPLICATION = 'assignment6.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
+"""
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -87,11 +88,11 @@ DATABASES = {
         'ENGINE': 'djongo',
         'NAME': 'cctbdb',
         'CLIENT': {
-            'host': 'mongodb://cctb1:cctb2025@<MONGO_EC2_PUBLIC_IP>:27017/cctbdb?authSource=cctbdb',
+            'host': 'mongodb://cctb:cctb2025@184.73.89.143:27017/cctbdb?authSource=cctbdb',
         }
     }
 }
-"""
+
 
 # Password validation
 # https://docs.djangoproject.com/en/5.2/ref/settings/#auth-password-validators
