@@ -1,6 +1,7 @@
 from django.shortcuts import render
 
 from .forms import BitwiseForm
+from .models import BitwiseCalculation  # Import the model
 
 # Create your views here.
 def index(request):
@@ -12,6 +13,9 @@ def index(request):
             c = form.cleaned_data['c']
             d = form.cleaned_data['d']
             e = form.cleaned_data['e']
+
+            # Save the values to the database
+            BitwiseCalculation.objects.create(a=a, b=b, c=c, d=d, e=e)
 
             messages = []
 

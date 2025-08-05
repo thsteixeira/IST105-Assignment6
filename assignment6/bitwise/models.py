@@ -1,12 +1,13 @@
 from django.db import models
 
 # Create your models here
-class BitwiseOperation(models.Model):
+class BitwiseCalculation(models.Model):
     a = models.IntegerField()
     b = models.IntegerField()
     c = models.IntegerField()
     d = models.IntegerField()
     e = models.IntegerField()
+    created_at = models.DateTimeField(auto_now_add=True)
 
     def bitwise_and(self):
         return self.a & self.b
